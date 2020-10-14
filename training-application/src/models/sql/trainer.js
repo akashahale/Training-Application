@@ -1,6 +1,16 @@
-const Sequelize = require("sequelize");
-
-module.exports=Sequelize.define("tbl_trainers", {
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('mydb','root','admin',{
+   host: 'localhost',
+  dialect: 'mysql'
+});
+sequelize.authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+const Trainer =sequelize.define("tbl_trainers", {
     trainer_id: {
     type: Sequelize.INTEGER(11),
     allowNull: false,
@@ -15,3 +25,4 @@ module.exports=Sequelize.define("tbl_trainers", {
   is_active:Sequelize.BOOLEAN
 });
 
+module.exports={Trainer};
