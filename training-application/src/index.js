@@ -1,4 +1,5 @@
 const express = require('express');
+
 const app = express();
 const dotenv = require('dotenv').config({path:'C:/nodeProgramLaptop/training-application/.env'})
 let trainer = require('./routes/r-trainer');

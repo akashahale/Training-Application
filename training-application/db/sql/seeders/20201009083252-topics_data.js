@@ -3,7 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
   
-      await queryInterface.bulkInsert('tbl_topics',
+      await queryInterface.bulkInsert('topics',
             [
                 {
                     topic_name: 'Java',
